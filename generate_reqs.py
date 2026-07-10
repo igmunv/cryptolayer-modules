@@ -23,6 +23,6 @@ def generate_full_modules_requirements():
         f.write("\n".join(list(module_reqs)))
 
 if __name__ == "__main__":
-    generate_full_requirements()
+    generate_full_modules_requirements()
 
 
