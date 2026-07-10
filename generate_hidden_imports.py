@@ -30,6 +30,10 @@ def generate_hid_imports():
             module_name = imp.replace("-", "_")
             f.write(f"try:\n    import {module_name}\nexcept ImportError:\n    pass\n")
 
+    with open(os.path.join(root_dir, "pyinstaller_flags.txt"), "w") as f:
+        for pkg in sorted(hidden_imports):
+            f.write(f"--collect-submodules {pkg} ")
+
 
 if __name__ == "__main__":
     generate_hid_imports()
