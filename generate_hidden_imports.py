@@ -16,7 +16,7 @@ def generate_hid_imports():
     for folder in os.listdir(root_dir):
         req_file = os.path.join(root_dir, folder, "requirements.txt")
         if os.path.exists(req_file):
-            with open(req_file, "r") as f:
+            with open(req_file, "r", encoding='utf-8') as f:
                 module_reqs.update(line.strip() for line in f if line.strip())
 
     hidden_imports = set()
@@ -24,13 +24,13 @@ def generate_hid_imports():
         pkg = mod.strip().split('==')[0].split('>=')[0]
         hidden_imports.add(pkg)
 
-    with open(os.path.join(root_dir, "hidden_imports.py"), "w") as f:
+    with open(os.path.join(root_dir, "hidden_imports.py"), "w", encoding='utf-8') as f:
         f.write("# Автоматически сгенерировано для PyInstaller\n")
         for imp in sorted(hidden_imports):
             module_name = imp.replace("-", "_")
             f.write(f"try:\n    import {module_name}\nexcept ImportError:\n    pass\n")
 
-    with open(os.path.join(root_dir, "pyinstaller_flags.txt"), "w") as f:
+    with open(os.path.join(root_dir, "pyinstaller_flags.txt"), "w", encoding='utf-8') as f:
         for pkg in sorted(hidden_imports):
             f.write(f"--collect-submodules {pkg} ")
 

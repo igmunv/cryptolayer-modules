@@ -18,11 +18,11 @@ def generate_full_modules_requirements():
     for folder in os.listdir(root_dir):
         req_file = os.path.join(root_dir, folder, "requirements.txt")
         if os.path.exists(req_file):
-            with open(req_file, "r") as f:
+            with open(req_file, "r", encoding='utf-8') as f:
                 module_reqs.update(line.strip() for line in f if line.strip())
 
     # создание общего requirements файла
-    with open(os.path.join(root_dir, "common_requirements.txt"), "w") as f:
+    with open(os.path.join(root_dir, "common_requirements.txt"), "w", encoding='utf-8') as f:
         f.write("\n".join(list(module_reqs)))
 
 if __name__ == "__main__":
