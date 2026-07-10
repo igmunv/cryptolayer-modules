@@ -1,4 +1,5 @@
 **/common_requirements.txt
+**/hidden_imports.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
