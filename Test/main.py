@@ -1,4 +1,4 @@
-from modules.base import BaseModule, Credential
+from base_module import BaseModule, Credential
 
 import time
 

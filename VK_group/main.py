@@ -3,7 +3,7 @@ from vk_api.bot_longpoll import VkBotLongPoll, VkBotEventType
 
 import threading, time, logging
 
-from modules.base import BaseModule, Credential
+from base_module import BaseModule, Credential
 
 
 class VK(BaseModule):
