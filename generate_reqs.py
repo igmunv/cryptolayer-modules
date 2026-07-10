@@ -19,7 +19,7 @@ def generate_full_modules_requirements():
                 module_reqs.update(line.strip() for line in f if line.strip())
 
     # создание общего requirements файла
-    with open("common_requirements.txt", "w") as f:
+    with open(os.path.join(root_dir, "common_requirements.txt"), "w") as f:
         f.write("\n".join(list(module_reqs)))
 
 if __name__ == "__main__":
