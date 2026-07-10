@@ -58,7 +58,7 @@ class VK(BaseModule):
                             self.ingester(event.text)
 
 
-    def create_session(self, credentials, ingester: callable, user_id):
+    def create_session(self, ingester: callable):
 
         self.vk_session = vk_api.VkApi(token=self.credentials[0])
 

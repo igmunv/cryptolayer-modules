@@ -1,5 +1,6 @@
 **/common_requirements.txt
 **/hidden_imports.py
+**/pyinstaller_flags.txt
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
