@@ -5,6 +5,8 @@ import time
 
 class Test(BaseModule):
 
+    @property
+    def unique_id(self): return "test_0"
 
     @property
     def name(self): return "Test"

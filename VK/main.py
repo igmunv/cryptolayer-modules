@@ -8,6 +8,8 @@ from base_module import BaseModule, Credential
 
 class VK(BaseModule):
 
+    @property
+    def unique_id(self): return "vk_1"
 
     @property
     def name(self): return "VK"
