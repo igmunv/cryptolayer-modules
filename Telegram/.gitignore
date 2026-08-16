@@ -1,5 +1,0 @@
-# Telethon session files (live Telegram account credentials) — never commit
-*.session
-*.session-journal
-
-__pycache__/
