@@ -108,7 +108,7 @@ API ID:   2040
 API Hash: b18441a1ff607e10a989891a5462e627
 ```
 
-⚠️ This pair **does not belong to CryptoLayer** and is not controlled by us - it's widely known "public" data used by thousands of third-party applications. Technically this violates Telegram API's terms of use (every application is supposed to register its own credentials), so:
+This pair **does not belong to CryptoLayer** and is not controlled by us - it's widely known "public" data used by thousands of third-party applications. Technically this violates Telegram API's terms of use (every application is supposed to register its own credentials), so:
 
 - use it **only for a quick local test**, not for permanent/production use;
 - because of the huge number of unrelated apps sharing the same credentials, expect more frequent rate limits (`FloodWait`) or Telegram blocking this pair without warning;
