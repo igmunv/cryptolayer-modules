@@ -2,10 +2,6 @@
 **/hidden_imports.py
 **/pyinstaller_flags.txt
 
-# Telethon session files (live Telegram account credentials)
-*.session
-*.session-journal
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
