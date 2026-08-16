@@ -92,5 +92,3 @@ class Telegram(BaseModule):
         self.listener = self.Listener(self.credentials, ingester, file_ingester, self.user_id, self.client, self.stop_event)
 
         threading.Thread(target=self.client.run_until_disconnected, daemon=True).start()
-
-# main.py
