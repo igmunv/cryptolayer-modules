@@ -21,8 +21,20 @@ def generate_hid_imports():
 
     hidden_imports = set()
     for mod in module_reqs:
-        pkg = mod.strip().split('==')[0].split('>=')[0]
-        hidden_imports.add(pkg)
+        # PEP 508 direct references ("pkg @ git+https://...") must be cut
+        # BEFORE version-specifier splitting, otherwise the whole URL leaks
+        # into the import statement and breaks the generated file.
+        pkg = (
+            mod.split('@')[0]
+            .split('==')[0]
+            .split('>=')[0]
+            .split('<=')[0]
+            .split('<')[0]
+            .split('>')[0]
+            .strip()
+        )
+        if pkg:
+            hidden_imports.add(pkg)
 
     with open(os.path.join(root_dir, "hidden_imports.py"), "w", encoding='utf-8') as f:
         f.write("# Автоматически сгенерировано для PyInstaller\n")
